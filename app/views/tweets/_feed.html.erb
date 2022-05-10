@@ -1,0 +1,51 @@
+<div class="column is-half">
+  
+	<%
+=begin%>
+ <article class="media box">
+		<figure class="media-left">
+			<p class="image is-64x64">
+				Baz
+			</p>
+		</figure>
+		<div class="media-content">
+			 
+		</div>
+	</article> 
+<%
+=end%>
+  
+  <% @tweets.each do | tweet | %>
+    <div class="box">
+        <article class="media">
+            <div class="media-left">
+                <figure class="image is-64x64">
+                    avatar
+                </figure>
+            </div>
+            <div class="media-content">
+                <div class="content">
+                    <%= render tweet %>
+                    <p>
+                      <%= link_to "Show this tweet", tweet %>
+                    </p>
+                </div>
+            </div>
+        </article>
+    </div>
+  <% end %>
+
+
+  <%
+=begin%>
+ <% @tweets.each do |tweet| %>
+    <%= render tweet %>
+    <p>
+      <%= link_to "Show this tweet", tweet %>
+    </p>
+  <% end %> 
+<%
+=end%>
+
+</div>
+<%= link_to "New tweet", new_tweet_path %>
